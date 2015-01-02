@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Your settings</h2>
+@using (Html.BeginForm("Edit", "Settings")) { 
+    <p>Messages from friends only</p>
+    @Html.CheckBox("FriendOnly",(bool)@ViewBag.MyUser.friendMessageOnly);
+    <br />
+    <input type="submit" name="operation" value="OK" />
+}
+

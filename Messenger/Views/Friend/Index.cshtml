@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Friends</h2>
+@foreach (Messenger.Models.ApplicationUser userF in ViewBag.Friends)
+{
+    using (Html.BeginForm("RemoveFriend", "Friend", new { id = userF.Id }))
+    {
+        @userF
+        <input type="submit" name="operation" value="Удалить из друзей" />
+    }
+}
+<h2>Requests to this user</h2>
+@foreach (Messenger.Models.ApplicationUser userF in ViewBag.RequestsToThisUser)
+{
+    using (Html.BeginForm("ConfirmRequest", "Friend", new { id = userF.Id }))
+    {
+        @userF
+        <input type="submit" name="operation" value="Подтвердить" />
+    }
+    using (Html.BeginForm("CancelRequestToThisUser", "Friend", new { id = userF.Id }))
+    {
+        <input type="submit" name="operation" value="Отказать" />
+    }
+}
+<h2>Requests from this user</h2>
+@foreach (Messenger.Models.ApplicationUser userF in ViewBag.RequestsFromThisUser)
+{
+    using (Html.BeginForm("CancelRequestFromThisUser", "Friend", new { id = userF.Id }))
+    {
+        @userF
+        <input type="submit" name="operation" value="Отозвать запрос" />
+    }
+    
+}
+
+

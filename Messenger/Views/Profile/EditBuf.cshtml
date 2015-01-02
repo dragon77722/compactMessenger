@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm("Edit", "Profile"))
+{
+    <label>Your real name</label> @Html.TextBox("RealName") <br />
+    <label>Your surname</label> @Html.TextBox("Surname") <br />
+    <label>Your age</label> @Html.TextBox("Age") <br />
+    <input type="submit" name="operation" value="Change" />
+}

@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Your profile</h2>
+    <label>Your real name</label> 
+    @ViewBag.MyUser.Realname; 
+    <br />
+    <label>Your surname</label> @ViewBag.MyUser.Surname; <br />
+    <label>Your age</label> @ViewBag.MyUser.Age;  <br />
+    @using (Html.BeginForm("EditBuf", "Profile"))
+    {
+        <input type="submit" name="operation" value="Редактировать" />
+    }
+

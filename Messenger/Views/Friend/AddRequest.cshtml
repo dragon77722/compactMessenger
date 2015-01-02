@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "AddRequest";
+}
+
+@if(!ViewBag.isFriend)
+{ 
+    if(!ViewBag.isThereRequest)
+    { 
+        <h2>Запрос на добавление отправлен</h2>
+    }
+    if (ViewBag.isThereRequest)
+    {
+        <h2>Запрос на добавление уже отправлен и еще не подтвержден</h2>
+    }
+}
+else
+{ 
+    <h2>Этот пользователь - ваш друг</h2> 
+}
+

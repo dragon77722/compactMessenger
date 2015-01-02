@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Ban</h2>
+@foreach (Messenger.Models.ApplicationUser userF in ViewBag.Users)
+{
+    if(string.Compare(userF.Email, "admin@admin.ru") != 0 )
+    {
+        using (Html.BeginForm("DeleteUser", "Delete", new { id = userF.Id }))
+        {
+            @userF
+            <input type="submit" name="operation" value="Удалить пользователя" />
+        }
+    }
+}
+

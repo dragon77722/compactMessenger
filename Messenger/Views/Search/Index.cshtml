@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Search</h2>
+@using (Html.BeginForm("Result", "Search"))
+{
+<label>Email</label> @Html.TextBox("Email") <br />
+<label>Name</label> @Html.TextBox("RealName") <br />
+<label>Surname</label> @Html.TextBox("Surname") <br />
+<label>Age</label> @Html.TextBox("Age") <br />
+<input type="submit" name="operation" value="Search" />
+}

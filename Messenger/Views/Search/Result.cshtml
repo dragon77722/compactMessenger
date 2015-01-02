@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Result";
+}
+
+
+<h2>Result</h2>
+@foreach (Messenger.Models.ApplicationUser userF in ViewBag.SearchResult)
+{
+    using (Html.BeginForm("AddRequest", "Friend", new { id = userF.Id }))
+    {
+        @userF
+        <input type="submit" name="operation" value="Отправить запрос на добавление в друзья"/>
+    }
+}
+
+@if (ViewBag.SearchResult.Count == 0)
+{
+    <p>По такому запросу пользователи не найдены</p>
+}
+
